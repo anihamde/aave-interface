@@ -47,6 +47,7 @@ export const SupplyAssetsList = () => {
   const {
     user,
     reserves,
+    // TODO: oracle
     marketReferencePriceInUsd,
     loading: loadingReserves,
   } = useAppDataContext();
@@ -77,6 +78,7 @@ export const SupplyAssetsList = () => {
         );
       }
       const availableToDepositUSD = valueToBigNumber(availableToDeposit)
+        // TODO: oracle
         .multipliedBy(reserve.priceInMarketReferenceCurrency)
         .multipliedBy(marketReferencePriceInUsd)
         .shiftedBy(-USD_DECIMALS)
@@ -105,6 +107,7 @@ export const SupplyAssetsList = () => {
           );
         }
         const baseAvailableToDepositUSD = valueToBigNumber(baseAvailableToDeposit)
+          // TODO: oracle
           .multipliedBy(reserve.priceInMarketReferenceCurrency)
           .multipliedBy(marketReferencePriceInUsd)
           .shiftedBy(-USD_DECIMALS)

@@ -323,6 +323,7 @@ export const selectUserReservesForMigration = (store: RootStore, timestamp: numb
         aIncentivesData: v3SupplyAsset.reserve.aIncentivesData,
         vIncentivesData: v3SupplyAsset.reserve.vIncentivesData,
         sIncentivesData: v3SupplyAsset.reserve.sIncentivesData,
+        // TODO: oracle
         priceInUSD: v3SupplyAsset.reserve.priceInUSD,
         ltv,
       };
@@ -382,6 +383,7 @@ export const selectUserReservesForMigration = (store: RootStore, timestamp: numb
         aIncentivesData: v3BorrowAsset.reserve.aIncentivesData,
         vIncentivesData: v3BorrowAsset.reserve.vIncentivesData,
         sIncentivesData: v3BorrowAsset.reserve.sIncentivesData,
+        // TODO: oracle
         priceInUSD: v3BorrowAsset.reserve.priceInUSD,
         liquidationThreshold,
       };
@@ -578,12 +580,14 @@ export const selectFormatUserSummaryForMigration = (
   currentTimestamp: number,
   userEmodeCategoryId = 0
 ) => {
+  // TODO: oracle
   const { marketReferenceCurrencyDecimals, marketReferenceCurrencyPriceInUsd } = baseCurrencyData;
   const formattedReserves = formatReservesAndIncentives({
     reserves: reserves,
     reserveIncentives,
     currentTimestamp,
     marketReferenceCurrencyDecimals: marketReferenceCurrencyDecimals,
+    // TODO: oracle
     marketReferencePriceInUsd: marketReferenceCurrencyPriceInUsd,
   });
 
@@ -591,6 +595,7 @@ export const selectFormatUserSummaryForMigration = (
     currentTimestamp,
     formattedReserves,
     marketReferenceCurrencyDecimals: marketReferenceCurrencyDecimals,
+    // TODO: oracle
     marketReferencePriceInUsd: marketReferenceCurrencyPriceInUsd,
     userReserves,
     userEmodeCategoryId,

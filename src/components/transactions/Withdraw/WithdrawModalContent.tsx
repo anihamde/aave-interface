@@ -68,6 +68,7 @@ export const WithdrawModalContent = ({
     }
     maxAmountToWithdraw = BigNumber.min(
       maxAmountToWithdraw,
+      // TODO: oracle
       maxCollateralToWithdrawInETH.dividedBy(poolReserve.formattedPriceInMarketReferenceCurrency)
     );
   }
@@ -100,6 +101,7 @@ export const WithdrawModalContent = ({
     poolReserve.reserveLiquidationThreshold !== '0'
   ) {
     const amountToWithdrawInEth = valueToBigNumber(amount).multipliedBy(
+      // TODO: oracle
       poolReserve.formattedPriceInMarketReferenceCurrency
     );
     totalCollateralInETHAfterWithdraw =
@@ -167,6 +169,7 @@ export const WithdrawModalContent = ({
   };
 
   // calculating input usd value
+  // TODO: oracle
   const usdValue = valueToBigNumber(amount).multipliedBy(userReserve?.reserve.priceInUSD || 0);
 
   if (withdrawTxState.success)

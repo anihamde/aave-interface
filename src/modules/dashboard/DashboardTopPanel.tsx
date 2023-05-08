@@ -57,15 +57,18 @@ export const DashboardTopPanel = () => {
       if (!currentMarketData.v3 && Number(rewardBalance) > 0) {
         if (currentMarketData.chainId === ChainId.mainnet) {
           const aave = reserves.find((reserve) => reserve.symbol === 'AAVE');
+          // TODO: oracle
           tokenPrice = aave ? Number(aave.priceInUSD) : 0;
         } else {
           reserves.forEach((reserve) => {
             if (reserve.symbol === currentNetworkConfig.wrappedBaseAssetSymbol) {
+              // TODO: oracle
               tokenPrice = Number(reserve.priceInUSD);
             }
           });
         }
       } else {
+        // TODO: oracle
         tokenPrice = Number(incentive.rewardPriceFeed);
       }
 

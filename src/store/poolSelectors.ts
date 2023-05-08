@@ -127,6 +127,7 @@ export const selectFormattedReserves = (state: RootStore, currentTimestamp: numb
     reserves,
     currentTimestamp,
     marketReferenceCurrencyDecimals: baseCurrencyData.marketReferenceCurrencyDecimals,
+    // TODO: oracle
     marketReferencePriceInUsd: baseCurrencyData.marketReferenceCurrencyPriceInUsd,
     reserveIncentives: state.reserveIncentiveData || [],
   })
@@ -153,6 +154,7 @@ export const selectUserSummaryAndIncentives = (state: RootStore, currentTimestam
   // TODO: why <any>
   return formatUserSummaryAndIncentives({
     currentTimestamp,
+    // TODO: oracle
     marketReferencePriceInUsd: baseCurrencyData.marketReferenceCurrencyPriceInUsd,
     marketReferenceCurrencyDecimals: baseCurrencyData.marketReferenceCurrencyDecimals,
     userReserves,
@@ -194,6 +196,7 @@ export const formatEmodes = (reserves: ReserveDataHumanized[]) => {
         label: r.eModeLabel,
         liquidationThreshold: r.eModeLiquidationThreshold,
         ltv: r.eModeLtv,
+        // TODO: oracle
         priceSource: r.eModePriceSource,
         assets: [r.symbol],
       };

@@ -350,6 +350,7 @@ export const MigrationListItem = ({
       {userReserve.reserve.symbol === 'stETH' && (
         <Box sx={{ pl: '16px', width: '100%' }}>
           <StETHMigrationWarning
+            // TODO: oracle
             v2Price={userReserve.reserve.priceInUSD}
             v2Amount={amount}
             v3Price={v3Rates?.priceInUSD}

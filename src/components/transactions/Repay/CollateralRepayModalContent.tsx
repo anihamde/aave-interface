@@ -80,14 +80,17 @@ export function CollateralRepayModalContent({
   const isMaxSelected = amount === '-1';
   const repayAmount = isMaxSelected ? safeAmountToRepayAll.toString() : amount;
   const repayAmountUsdValue = valueToBigNumber(repayAmount)
+    // TODO: oracle
     .multipliedBy(poolReserve.priceInUSD)
     .toString();
 
   // The slippage is factored into the collateral amount because when we swap for 'exactOut', positive slippage is applied on the collateral amount.
   const collateralAmountRequiredToCoverDebt = safeAmountToRepayAll
+    // TODO: oracle
     .multipliedBy(poolReserve.priceInUSD)
     .multipliedBy(100 + Number(maxSlippage))
     .dividedBy(100)
+    // TODO: oracle
     .dividedBy(collateralReserveData.priceInUSD);
 
   const swapIn = { ...collateralReserveData, amount: tokenToRepayWithBalance };
@@ -167,11 +170,13 @@ export function CollateralRepayModalContent({
   // a safe amount to repay all. When this happens amountAfterRepay would be < 0 and
   // this would show as certain amount left to repay when we are actually repaying all debt
   const amountAfterRepay = valueToBigNumber(debt).minus(BigNumber.min(outputAmount, debt));
+  // TODO: oracle
   const displayAmountAfterRepayInUsd = amountAfterRepay.multipliedBy(poolReserve.priceInUSD);
   const collateralAmountAfterRepay = tokenToRepayWithBalance
     ? valueToBigNumber(tokenToRepayWithBalance).minus(inputAmount)
     : valueToBigNumber('0');
   const collateralAmountAfterRepayUSD = collateralAmountAfterRepay.multipliedBy(
+    // TODO: oracle
     collateralReserveData.priceInUSD
   );
 

@@ -50,6 +50,7 @@ export const SupplyModalContent = React.memo(
     nativeBalance,
     tokenBalance,
   }: ModalWrapperProps) => {
+    // TODO: oracle
     const { marketReferencePriceInUsd, user } = useAppDataContext();
     const { currentMarketData, currentNetworkConfig } = useProtocolDataContext();
     const { mainTxState: supplyTxState, gasLimit, txError } = useModalContext();
@@ -101,10 +102,12 @@ export const SupplyModalContent = React.memo(
 
     // Calculation of future HF
     const amountIntEth = new BigNumber(amount).multipliedBy(
+      // TODO: oracle
       poolReserve.formattedPriceInMarketReferenceCurrency
     );
     // TODO: is it correct to ut to -1 if user doesnt exist?
     const amountInUsd = amountIntEth
+      // TODO: oracle
       .multipliedBy(marketReferencePriceInUsd)
       .shiftedBy(-USD_DECIMALS);
     const totalCollateralMarketReferenceCurrencyAfter = user

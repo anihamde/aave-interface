@@ -55,6 +55,7 @@ export function calculateHFAfterSwap({
   ) {
     hfEffectOfFromAmount = calculateHealthFactorFromBalancesBigUnits({
       collateralBalanceMarketReferenceCurrency: valueToBigNumber(fromAmount).multipliedBy(
+        // TODO: oracle
         fromAssetData.formattedPriceInMarketReferenceCurrency
       ),
       borrowBalanceMarketReferenceCurrency: user.totalBorrowsMarketReferenceCurrency,
@@ -72,6 +73,7 @@ export function calculateHFAfterSwap({
     hfEffectOfToAmount = calculateHealthFactorFromBalancesBigUnits({
       collateralBalanceMarketReferenceCurrency: valueToBigNumber(
         toAmountAfterSlippage
+        // TODO: oracle
       ).multipliedBy(toAssetData.formattedPriceInMarketReferenceCurrency),
       borrowBalanceMarketReferenceCurrency: user.totalBorrowsMarketReferenceCurrency,
       currentLiquidationThreshold:
@@ -116,6 +118,7 @@ export const calculateHFAfterRepay = ({
   ) {
     hfInitialEffectOfFromAmount = calculateHealthFactorFromBalancesBigUnits({
       collateralBalanceMarketReferenceCurrency: valueToBigNumber(amountToSwap).multipliedBy(
+        // TODO: oracle
         fromAssetData.formattedPriceInMarketReferenceCurrency
       ),
       borrowBalanceMarketReferenceCurrency: user.totalBorrowsMarketReferenceCurrency,
@@ -126,6 +129,7 @@ export const calculateHFAfterRepay = ({
   const fromAmountInMarketReferenceCurrency = valueToBigNumber(
     BigNumber.min(amountToReceiveAfterSwap, debt)
   )
+    // TODO: oracle
     .multipliedBy(toAssetData.priceInUSD)
     .toString(10);
   let debtLeftInMarketReference = valueToBigNumber(user.totalBorrowsUSD).minus(
@@ -145,6 +149,7 @@ export const calculateHFAfterRepay = ({
     repayWithUserReserve?.usageAsCollateralEnabledOnUser
       ? calculateHealthFactorFromBalancesBigUnits({
           collateralBalanceMarketReferenceCurrency: valueToBigNumber(amountToSwap).multipliedBy(
+            // TODO: oracle
             fromAssetData.priceInUSD
           ),
           borrowBalanceMarketReferenceCurrency: debtLeftInMarketReference.toString(10),

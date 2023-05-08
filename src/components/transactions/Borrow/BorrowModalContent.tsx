@@ -109,6 +109,7 @@ export const BorrowModalContent = ({
   symbol,
 }: ModalWrapperProps & { unwrap: boolean; setUnwrap: (unwrap: boolean) => void }) => {
   const { mainTxState: borrowTxState, gasLimit, txError } = useModalContext();
+  // TODO: oracle
   const { user, marketReferencePriceInUsd } = useAppDataContext();
   const { currentNetworkConfig } = useProtocolDataContext();
   const { borrowCap } = useAssetCaps();
@@ -135,6 +136,7 @@ export const BorrowModalContent = ({
 
   // health factor calculations
   const amountToBorrowInUsd = valueToBigNumber(amount)
+    // TODO: oracle
     .multipliedBy(poolReserve.formattedPriceInMarketReferenceCurrency)
     .multipliedBy(marketReferencePriceInUsd)
     .shiftedBy(-USD_DECIMALS);
@@ -150,6 +152,7 @@ export const BorrowModalContent = ({
     newHealthFactor.toNumber() < 1.5 && newHealthFactor.toString() !== '-1';
 
   // calculating input usd value
+  // TODO: oracle
   const usdValue = valueToBigNumber(amount).multipliedBy(poolReserve.priceInUSD);
 
   // error types handling

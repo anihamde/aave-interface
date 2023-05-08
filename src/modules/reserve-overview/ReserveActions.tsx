@@ -50,6 +50,7 @@ export const ReserveActions = ({ reserve }: ReserveActionsProps) => {
   const { isPermissionsLoading } = usePermissions();
   const { openBorrow, openSupply } = useModalContext();
   const { currentMarket, currentNetworkConfig } = useProtocolDataContext();
+  // TODO: oracle
   const { user, loading: loadingReserves, marketReferencePriceInUsd } = useAppDataContext();
   const { walletBalances, loading: loadingWalletBalance } = useWalletBalances();
   const {
@@ -66,6 +67,7 @@ export const ReserveActions = ({ reserve }: ReserveActionsProps) => {
 
   const maxAmountToBorrowUsd = amountToUsd(
     maxAmountToBorrow,
+    // TODO: oracle
     reserve.formattedPriceInMarketReferenceCurrency,
     marketReferencePriceInUsd
   ).toString();
@@ -79,6 +81,7 @@ export const ReserveActions = ({ reserve }: ReserveActionsProps) => {
 
   const maxAmountToSupplyUsd = amountToUsd(
     maxAmountToSupply,
+    // TODO: oracle
     reserve.formattedPriceInMarketReferenceCurrency,
     marketReferencePriceInUsd
   ).toString();

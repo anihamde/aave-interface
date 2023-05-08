@@ -177,6 +177,7 @@ export const AppDataProvider: React.FC = ({ children }) => {
         },
         userReserves,
         isUserHasDeposits,
+        // TODO: oracle
         marketReferencePriceInUsd: baseCurrencyData.marketReferenceCurrencyPriceInUsd,
         marketReferenceCurrencyDecimals: baseCurrencyData.marketReferenceCurrencyDecimals,
       }}

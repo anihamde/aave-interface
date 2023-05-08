@@ -148,6 +148,7 @@ export const SwapModalDetails = ({
                 </Box>
                 <FormattedNumber
                   value={sourceAmountAfterSwap
+                    // TODO: oracle
                     .multipliedBy(valueToBigNumber(swapSource.reserve.priceInUSD))
                     .toString()}
                   variant="helperText"
@@ -186,6 +187,7 @@ export const SwapModalDetails = ({
                 </Box>
                 <FormattedNumber
                   value={targetAmountAfterSwap
+                    // TODO: oracle
                     .multipliedBy(valueToBigNumber(swapTarget.reserve.priceInUSD))
                     .toString()}
                   variant="helperText"

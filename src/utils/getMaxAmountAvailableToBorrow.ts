@@ -48,6 +48,7 @@ export function getMaxAmountAvailableToBorrow(
 
   let maxUserAmountToBorrow = BigNumber.min(
     valueToBigNumber(user?.availableBorrowsMarketReferenceCurrency || 0).div(
+      // TODO: oracle
       poolReserve.formattedPriceInMarketReferenceCurrency
     ),
     availableLiquidity.toString()

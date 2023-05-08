@@ -240,6 +240,7 @@ export const ReserveTopDetails = ({ underlyingAsset }: ReserveTopDetailsProps) =
       <TopInfoPanelItem title={<Trans>Oracle price</Trans>} loading={loading} hideIcon>
         <Box sx={{ display: 'inline-flex', alignItems: 'center' }}>
           <FormattedNumber
+            // TODO: oracle
             value={poolReserve?.priceInUSD}
             symbol="USD"
             variant={valueTypographyVariant}
@@ -252,6 +253,7 @@ export const ReserveTopDetails = ({ underlyingAsset }: ReserveTopDetailsProps) =
             <CircleIcon tooltipText="View oracle contract" downToSM={downToSM}>
               <Link
                 href={currentNetworkConfig.explorerLinkBuilder({
+                  // TODO: oracle
                   address: poolReserve?.priceOracle,
                 })}
                 sx={iconStyling}

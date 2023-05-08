@@ -43,6 +43,7 @@ export const RepayModalContent = ({
   debtType,
 }: ModalWrapperProps & { debtType: InterestRate }) => {
   const { gasLimit, mainTxState: repayTxState, txError } = useModalContext();
+  // TODO: oracle
   const { marketReferencePriceInUsd, user } = useAppDataContext();
   const { currentChainId, currentMarketData } = useProtocolDataContext();
   const {
@@ -72,6 +73,7 @@ export const RepayModalContent = ({
       ? userReserve?.stableBorrows || '0'
       : userReserve?.variableBorrows || '0';
   const debtUSD = new BigNumber(debt)
+    // TODO: oracle
     .multipliedBy(poolReserve.formattedPriceInMarketReferenceCurrency)
     .multipliedBy(marketReferencePriceInUsd)
     .shiftedBy(-USD_DECIMALS);
@@ -178,6 +180,7 @@ export const RepayModalContent = ({
     .minus(amount || '0')
     .toString(10);
   const amountAfterRepayInUsd = new BigNumber(amountAfterRepay)
+    // TODO: oracle
     .multipliedBy(poolReserve.formattedPriceInMarketReferenceCurrency)
     .multipliedBy(marketReferencePriceInUsd)
     .shiftedBy(-USD_DECIMALS);
@@ -191,10 +194,12 @@ export const RepayModalContent = ({
         collateralBalanceMarketReferenceCurrency:
           repayWithATokens && usageAsCollateralEnabledOnUser
             ? valueToBigNumber(user?.totalCollateralUSD || '0').minus(
+                // TODO: oracle
                 valueToBigNumber(reserve.priceInUSD).multipliedBy(amount)
               )
             : user?.totalCollateralUSD || '0',
         borrowBalanceMarketReferenceCurrency: valueToBigNumber(user?.totalBorrowsUSD || '0').minus(
+          // TODO: oracle
           valueToBigNumber(reserve.priceInUSD).multipliedBy(amount)
         ),
         currentLiquidationThreshold: user?.currentLiquidationThreshold || '0',
@@ -202,6 +207,7 @@ export const RepayModalContent = ({
     : user?.healthFactor;
 
   // calculating input usd value
+  // TODO: oracle
   const usdValue = valueToBigNumber(amount).multipliedBy(reserve.priceInUSD);
 
   if (repayTxState.success)

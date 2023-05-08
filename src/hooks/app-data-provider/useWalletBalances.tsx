@@ -40,9 +40,11 @@ export const useWalletBalances = () => {
         amountUSD: nativeToUSD({
           amount: new BigNumber(reserve.amount),
           currencyDecimals: poolReserve.decimals,
+          // TODO: oracle
           priceInMarketReferenceCurrency: poolReserve.priceInMarketReferenceCurrency,
           marketReferenceCurrencyDecimals: baseCurrencyData.marketReferenceCurrencyDecimals,
           normalizedMarketReferencePriceInUsd: normalize(
+            // TODO: oracle
             baseCurrencyData.marketReferenceCurrencyPriceInUsd,
             USD_DECIMALS
           ),

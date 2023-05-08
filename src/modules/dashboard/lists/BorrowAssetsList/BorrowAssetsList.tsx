@@ -77,6 +77,7 @@ const head = [
 
 export const BorrowAssetsList = () => {
   const { currentNetworkConfig } = useProtocolDataContext();
+  // TODO: oracle
   const { user, reserves, marketReferencePriceInUsd, loading } = useAppDataContext();
   const theme = useTheme();
   const downToXSM = useMediaQuery(theme.breakpoints.down('xsm'));
@@ -93,6 +94,7 @@ export const BorrowAssetsList = () => {
         : 0;
 
       const availableBorrowsInUSD = valueToBigNumber(availableBorrows)
+        // TODO: oracle
         .multipliedBy(reserve.formattedPriceInMarketReferenceCurrency)
         .multipliedBy(marketReferencePriceInUsd)
         .shiftedBy(-USD_DECIMALS)

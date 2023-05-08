@@ -39,6 +39,7 @@ export const SwapModalContent = ({
   userReserve,
   isWrongNetwork,
 }: ModalWrapperProps) => {
+  // TODO: oracle
   const { reserves, user, marketReferencePriceInUsd } = useAppDataContext();
   const { currentChainId, currentNetworkConfig } = useProtocolDataContext();
   const { currentAccount } = useWeb3Context();
@@ -117,6 +118,7 @@ export const SwapModalContent = ({
   );
   const remainingCapUsd = amountToUsd(
     remainingSupplyCap,
+    // TODO: oracle
     swapTarget.reserve.formattedPriceInMarketReferenceCurrency,
     marketReferencePriceInUsd
   );
