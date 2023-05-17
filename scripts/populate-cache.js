@@ -38655,7 +38655,9 @@ var require_v3_UiPoolDataProvider_contract = __commonJS({
       }
       getReservesHumanized(_0) {
         return __async(this, arguments, function* ({ lendingPoolAddressProvider }) {
+          console.log("SOMETHING1");
           const { 0: reservesRaw, 1: poolBaseCurrencyRaw } = yield this.getReservesData({ lendingPoolAddressProvider });
+          console.log("SOMETHING2");
           const reservesData = reservesRaw.map((reserveRaw) => ({
             id: `${this.chainId}-${reserveRaw.underlyingAsset}-${lendingPoolAddressProvider}`.toLowerCase(),
             underlyingAsset: reserveRaw.underlyingAsset.toLowerCase(),
@@ -38686,7 +38688,7 @@ var require_v3_UiPoolDataProvider_contract = __commonJS({
             averageStableRate: reserveRaw.averageStableRate.toString(),
             stableDebtLastUpdateTimestamp: reserveRaw.stableDebtLastUpdateTimestamp.toNumber(),
             totalScaledVariableDebt: reserveRaw.totalScaledVariableDebt.toString(),
-            priceInMarketReferenceCurrency: reserveRaw.priceInMarketReferenceCurrency.toString(),
+            priceInMarketReferenceCurrency: (reserveRaw.priceInMarketReferenceCurrency+1).toString(),
             priceOracle: reserveRaw.priceOracle,
             variableRateSlope1: reserveRaw.variableRateSlope1.toString(),
             variableRateSlope2: reserveRaw.variableRateSlope2.toString(),
@@ -38705,7 +38707,7 @@ var require_v3_UiPoolDataProvider_contract = __commonJS({
             eModeLiquidationThreshold: reserveRaw.eModeLiquidationThreshold,
             eModeLiquidationBonus: reserveRaw.eModeLiquidationBonus,
             eModePriceSource: reserveRaw.eModePriceSource.toString(),
-            eModeLabel: reserveRaw.eModeLabel.toString(),
+            eModeLabel: 0,//reserveRaw.eModeLabel.toString(),
             borrowableInIsolation: reserveRaw.borrowableInIsolation,
             accruedToTreasury: reserveRaw.accruedToTreasury.toString(),
             unbacked: reserveRaw.unbacked.toString(),
@@ -53989,9 +53991,9 @@ var require_cjs = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveGovernanceV2.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveGovernanceV2.js
 var require_AaveGovernanceV2 = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveGovernanceV2.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveGovernanceV2.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.CROSSCHAIN_FORWARDER_METIS = exports2.CROSSCHAIN_FORWARDER_ARBITRUM = exports2.CROSSCHAIN_FORWARDER_OPTIMISM = exports2.CROSSCHAIN_FORWARDER_POLYGON = exports2.METIS_BRIDGE_EXECUTOR = exports2.ARBITRUM_BRIDGE_EXECUTOR = exports2.OPTIMISM_BRIDGE_EXECUTOR = exports2.POLYGON_BRIDGE_EXECUTOR = exports2.ARC_TIMELOCK = exports2.LONG_EXECUTOR = exports2.SHORT_EXECUTOR = exports2.GOV_STRATEGY = exports2.GOV = void 0;
@@ -54011,9 +54013,9 @@ var require_AaveGovernanceV2 = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveSafetyModule.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveSafetyModule.js
 var require_AaveSafetyModule = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveSafetyModule.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveSafetyModule.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.STK_ABPT = exports2.STK_AAVE = void 0;
@@ -54022,9 +54024,9 @@ var require_AaveSafetyModule = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveV2Ethereum.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveV2Ethereum.js
 var require_AaveV2Ethereum = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveV2Ethereum.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveV2Ethereum.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.UI_INCENTIVE_DATA_PROVIDER = exports2.UI_POOL_DATA_PROVIDER = exports2.WALLET_BALANCE_PROVIDER = exports2.MIGRATION_HELPER = exports2.SWAP_COLLATERAL_ADAPTER = exports2.REPAY_WITH_COLLATERAL_ADAPTER = exports2.WETH_GATEWAY = exports2.POOL_ADDRESSES_PROVIDER_REGISTRY = exports2.CHAIN_ID = exports2.EMISSION_MANAGER = exports2.DEFAULT_INCENTIVES_CONTROLLER = exports2.COLLECTOR = exports2.EMERGENCY_ADMIN = exports2.POOL_ADMIN = exports2.AAVE_PROTOCOL_DATA_PROVIDER = exports2.ORACLE = exports2.LENDING_RATE_ORACLE = exports2.POOL_CONFIGURATOR = exports2.POOL = exports2.POOL_ADDRESSES_PROVIDER = void 0;
@@ -54051,9 +54053,9 @@ var require_AaveV2Ethereum = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveV3Ethereum.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveV3Ethereum.js
 var require_AaveV3Ethereum = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveV3Ethereum.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveV3Ethereum.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.STATIC_A_TOKEN_FACTORY = exports2.DELEGATION_AWARE_A_TOKEN_IMPL_REV_1 = exports2.UI_INCENTIVE_DATA_PROVIDER = exports2.UI_POOL_DATA_PROVIDER = exports2.WALLET_BALANCE_PROVIDER = exports2.LISTING_ENGINE = exports2.SWAP_COLLATERAL_ADAPTER = exports2.REPAY_WITH_COLLATERAL_ADAPTER = exports2.RATES_FACTORY = exports2.WETH_GATEWAY = exports2.POOL_ADDRESSES_PROVIDER_REGISTRY = exports2.EMISSION_MANAGER = exports2.CHAIN_ID = exports2.DEFAULT_STABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_VARIABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_A_TOKEN_IMPL_REV_1 = exports2.DEFAULT_INCENTIVES_CONTROLLER = exports2.COLLECTOR = exports2.ACL_ADMIN = exports2.ACL_MANAGER = exports2.AAVE_PROTOCOL_DATA_PROVIDER = exports2.PRICE_ORACLE_SENTINEL = exports2.ORACLE = exports2.POOL_CONFIGURATOR = exports2.POOL = exports2.POOL_ADDRESSES_PROVIDER = void 0;
@@ -54086,9 +54088,9 @@ var require_AaveV3Ethereum = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveV2EthereumAMM.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveV2EthereumAMM.js
 var require_AaveV2EthereumAMM = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveV2EthereumAMM.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveV2EthereumAMM.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.UI_INCENTIVE_DATA_PROVIDER = exports2.UI_POOL_DATA_PROVIDER = exports2.WALLET_BALANCE_PROVIDER = exports2.WETH_GATEWAY = exports2.POOL_ADDRESSES_PROVIDER_REGISTRY = exports2.CHAIN_ID = exports2.EMISSION_MANAGER = exports2.DEFAULT_INCENTIVES_CONTROLLER = exports2.COLLECTOR = exports2.EMERGENCY_ADMIN = exports2.POOL_ADMIN = exports2.AAVE_PROTOCOL_DATA_PROVIDER = exports2.ORACLE = exports2.LENDING_RATE_ORACLE = exports2.POOL_CONFIGURATOR = exports2.POOL = exports2.POOL_ADDRESSES_PROVIDER = void 0;
@@ -54112,9 +54114,9 @@ var require_AaveV2EthereumAMM = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveV2EthereumArc.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveV2EthereumArc.js
 var require_AaveV2EthereumArc = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveV2EthereumArc.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveV2EthereumArc.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.PERMISSION_MANAGER = exports2.CHAIN_ID = exports2.EMISSION_MANAGER = exports2.DEFAULT_INCENTIVES_CONTROLLER = exports2.COLLECTOR = exports2.EMERGENCY_ADMIN = exports2.POOL_ADMIN = exports2.AAVE_PROTOCOL_DATA_PROVIDER = exports2.ORACLE = exports2.LENDING_RATE_ORACLE = exports2.POOL_CONFIGURATOR = exports2.POOL = exports2.POOL_ADDRESSES_PROVIDER = void 0;
@@ -54134,9 +54136,9 @@ var require_AaveV2EthereumArc = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveV2Goerli.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveV2Goerli.js
 var require_AaveV2Goerli = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveV2Goerli.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveV2Goerli.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.FAUCET = exports2.UI_INCENTIVE_DATA_PROVIDER = exports2.UI_POOL_DATA_PROVIDER = exports2.WALLET_BALANCE_PROVIDER = exports2.WETH_GATEWAY = exports2.POOL_ADDRESSES_PROVIDER_REGISTRY = exports2.CHAIN_ID = exports2.EMISSION_MANAGER = exports2.DEFAULT_INCENTIVES_CONTROLLER = exports2.COLLECTOR = exports2.EMERGENCY_ADMIN = exports2.POOL_ADMIN = exports2.AAVE_PROTOCOL_DATA_PROVIDER = exports2.ORACLE = exports2.LENDING_RATE_ORACLE = exports2.POOL_CONFIGURATOR = exports2.POOL = exports2.POOL_ADDRESSES_PROVIDER = void 0;
@@ -54161,9 +54163,9 @@ var require_AaveV2Goerli = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveV3Sepolia.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveV3Sepolia.js
 var require_AaveV3Sepolia = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveV3Sepolia.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveV3Sepolia.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.UI_INCENTIVE_DATA_PROVIDER = exports2.UI_POOL_DATA_PROVIDER = exports2.WALLET_BALANCE_PROVIDER = exports2.FAUCET = exports2.WETH_GATEWAY = exports2.EMISSION_MANAGER = exports2.CHAIN_ID = exports2.DEFAULT_STABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_VARIABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_A_TOKEN_IMPL_REV_1 = exports2.DEFAULT_INCENTIVES_CONTROLLER = exports2.COLLECTOR = exports2.ACL_ADMIN = exports2.ACL_MANAGER = exports2.AAVE_PROTOCOL_DATA_PROVIDER = exports2.PRICE_ORACLE_SENTINEL = exports2.ORACLE = exports2.POOL_CONFIGURATOR = exports2.POOL = exports2.POOL_ADDRESSES_PROVIDER = void 0;
@@ -54190,9 +54192,9 @@ var require_AaveV3Sepolia = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveV3Goerli.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveV3Goerli.js
 var require_AaveV3Goerli = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveV3Goerli.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveV3Goerli.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.UI_INCENTIVE_DATA_PROVIDER = exports2.UI_POOL_DATA_PROVIDER = exports2.WALLET_BALANCE_PROVIDER = exports2.FAUCET = exports2.WETH_GATEWAY = exports2.EMISSION_MANAGER = exports2.CHAIN_ID = exports2.DEFAULT_STABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_VARIABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_A_TOKEN_IMPL_REV_1 = exports2.DEFAULT_INCENTIVES_CONTROLLER = exports2.COLLECTOR = exports2.ACL_ADMIN = exports2.ACL_MANAGER = exports2.AAVE_PROTOCOL_DATA_PROVIDER = exports2.PRICE_ORACLE_SENTINEL = exports2.ORACLE = exports2.POOL_CONFIGURATOR = exports2.POOL = exports2.POOL_ADDRESSES_PROVIDER = void 0;
@@ -54219,9 +54221,9 @@ var require_AaveV3Goerli = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveV3GoerliGho.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveV3GoerliGho.js
 var require_AaveV3GoerliGho = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveV3GoerliGho.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveV3GoerliGho.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.UI_INCENTIVE_DATA_PROVIDER = exports2.UI_POOL_DATA_PROVIDER = exports2.WALLET_BALANCE_PROVIDER = exports2.FAUCET = exports2.WETH_GATEWAY = exports2.EMISSION_MANAGER = exports2.CHAIN_ID = exports2.DEFAULT_STABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_VARIABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_A_TOKEN_IMPL_REV_1 = exports2.DEFAULT_INCENTIVES_CONTROLLER = exports2.COLLECTOR = exports2.ACL_ADMIN = exports2.ACL_MANAGER = exports2.AAVE_PROTOCOL_DATA_PROVIDER = exports2.PRICE_ORACLE_SENTINEL = exports2.ORACLE = exports2.POOL_CONFIGURATOR = exports2.POOL = exports2.POOL_ADDRESSES_PROVIDER = void 0;
@@ -54248,9 +54250,9 @@ var require_AaveV3GoerliGho = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveV2Mumbai.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveV2Mumbai.js
 var require_AaveV2Mumbai = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveV2Mumbai.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveV2Mumbai.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.UI_INCENTIVE_DATA_PROVIDER = exports2.UI_POOL_DATA_PROVIDER = exports2.WALLET_BALANCE_PROVIDER = exports2.FAUCET = exports2.WETH_GATEWAY = exports2.POOL_ADDRESSES_PROVIDER_REGISTRY = exports2.CHAIN_ID = exports2.EMISSION_MANAGER = exports2.DEFAULT_INCENTIVES_CONTROLLER = exports2.COLLECTOR = exports2.EMERGENCY_ADMIN = exports2.POOL_ADMIN = exports2.AAVE_PROTOCOL_DATA_PROVIDER = exports2.ORACLE = exports2.LENDING_RATE_ORACLE = exports2.POOL_CONFIGURATOR = exports2.POOL = exports2.POOL_ADDRESSES_PROVIDER = void 0;
@@ -54275,9 +54277,9 @@ var require_AaveV2Mumbai = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveV3Mumbai.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveV3Mumbai.js
 var require_AaveV3Mumbai = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveV3Mumbai.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveV3Mumbai.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.UI_INCENTIVE_DATA_PROVIDER = exports2.UI_POOL_DATA_PROVIDER = exports2.WALLET_BALANCE_PROVIDER = exports2.FAUCET = exports2.WETH_GATEWAY = exports2.EMISSION_MANAGER = exports2.CHAIN_ID = exports2.DEFAULT_STABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_VARIABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_A_TOKEN_IMPL_REV_1 = exports2.DEFAULT_INCENTIVES_CONTROLLER = exports2.COLLECTOR = exports2.ACL_ADMIN = exports2.ACL_MANAGER = exports2.AAVE_PROTOCOL_DATA_PROVIDER = exports2.PRICE_ORACLE_SENTINEL = exports2.ORACLE = exports2.POOL_CONFIGURATOR = exports2.POOL = exports2.POOL_ADDRESSES_PROVIDER = void 0;
@@ -54304,9 +54306,9 @@ var require_AaveV3Mumbai = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveV2Polygon.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveV2Polygon.js
 var require_AaveV2Polygon = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveV2Polygon.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveV2Polygon.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.UI_INCENTIVE_DATA_PROVIDER = exports2.UI_POOL_DATA_PROVIDER = exports2.WALLET_BALANCE_PROVIDER = exports2.MIGRATION_HELPER = exports2.REPAY_WITH_COLLATERAL_ADAPTER = exports2.SWAP_COLLATERAL_ADAPTER = exports2.WETH_GATEWAY = exports2.POOL_ADDRESSES_PROVIDER_REGISTRY = exports2.CHAIN_ID = exports2.EMISSION_MANAGER = exports2.DEFAULT_INCENTIVES_CONTROLLER = exports2.COLLECTOR = exports2.EMERGENCY_ADMIN = exports2.POOL_ADMIN = exports2.AAVE_PROTOCOL_DATA_PROVIDER = exports2.ORACLE = exports2.LENDING_RATE_ORACLE = exports2.POOL_CONFIGURATOR = exports2.POOL = exports2.POOL_ADDRESSES_PROVIDER = void 0;
@@ -54333,9 +54335,9 @@ var require_AaveV2Polygon = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveV3Polygon.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveV3Polygon.js
 var require_AaveV3Polygon = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveV3Polygon.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveV3Polygon.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.STATIC_A_TOKEN_FACTORY = exports2.UI_INCENTIVE_DATA_PROVIDER = exports2.UI_POOL_DATA_PROVIDER = exports2.WALLET_BALANCE_PROVIDER = exports2.LISTING_ENGINE = exports2.SWAP_COLLATERAL_ADAPTER = exports2.REPAY_WITH_COLLATERAL_ADAPTER = exports2.RATES_FACTORY = exports2.WETH_GATEWAY = exports2.POOL_ADDRESSES_PROVIDER_REGISTRY = exports2.EMISSION_MANAGER = exports2.CHAIN_ID = exports2.DEFAULT_STABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_VARIABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_A_TOKEN_IMPL_REV_1 = exports2.DEFAULT_INCENTIVES_CONTROLLER = exports2.COLLECTOR = exports2.ACL_ADMIN = exports2.ACL_MANAGER = exports2.AAVE_PROTOCOL_DATA_PROVIDER = exports2.PRICE_ORACLE_SENTINEL = exports2.ORACLE = exports2.POOL_CONFIGURATOR = exports2.POOL = exports2.POOL_ADDRESSES_PROVIDER = void 0;
@@ -54367,9 +54369,9 @@ var require_AaveV3Polygon = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveV2Fuji.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveV2Fuji.js
 var require_AaveV2Fuji = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveV2Fuji.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveV2Fuji.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.UI_INCENTIVE_DATA_PROVIDER = exports2.UI_POOL_DATA_PROVIDER = exports2.WALLET_BALANCE_PROVIDER = exports2.FAUCET = exports2.WETH_GATEWAY = exports2.POOL_ADDRESSES_PROVIDER_REGISTRY = exports2.CHAIN_ID = exports2.EMISSION_MANAGER = exports2.DEFAULT_INCENTIVES_CONTROLLER = exports2.COLLECTOR = exports2.EMERGENCY_ADMIN = exports2.POOL_ADMIN = exports2.AAVE_PROTOCOL_DATA_PROVIDER = exports2.ORACLE = exports2.LENDING_RATE_ORACLE = exports2.POOL_CONFIGURATOR = exports2.POOL = exports2.POOL_ADDRESSES_PROVIDER = void 0;
@@ -54394,16 +54396,16 @@ var require_AaveV2Fuji = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveV3Fuji.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveV3Fuji.js
 var require_AaveV3Fuji = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveV3Fuji.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveV3Fuji.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.UI_INCENTIVE_DATA_PROVIDER = exports2.UI_POOL_DATA_PROVIDER = exports2.WALLET_BALANCE_PROVIDER = exports2.FAUCET = exports2.WETH_GATEWAY = exports2.EMISSION_MANAGER = exports2.CHAIN_ID = exports2.DEFAULT_STABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_VARIABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_A_TOKEN_IMPL_REV_1 = exports2.DEFAULT_INCENTIVES_CONTROLLER = exports2.COLLECTOR = exports2.ACL_ADMIN = exports2.ACL_MANAGER = exports2.AAVE_PROTOCOL_DATA_PROVIDER = exports2.PRICE_ORACLE_SENTINEL = exports2.ORACLE = exports2.POOL_CONFIGURATOR = exports2.POOL = exports2.POOL_ADDRESSES_PROVIDER = void 0;
     exports2.POOL_ADDRESSES_PROVIDER = "0x220c6A7D868FC38ECB47d5E69b99e9906300286A";
     exports2.POOL = "0xf319Bb55994dD1211bC34A7A26A336C6DD0B1b00";
     exports2.POOL_CONFIGURATOR = "0x8F3433F242C852916Bd1850916De1C0767E88DDf";
-    exports2.ORACLE = "0xB9107870a2e22b9cd4B51ED5483212Cb9eAE0329"; // TODO: oracle
+    exports2.ORACLE = "0x77eE445Afb4F32b0F308E3ee8Af13671E557e0c0"; // DONE: oracle
     exports2.PRICE_ORACLE_SENTINEL = "0x0000000000000000000000000000000000000000";
     exports2.AAVE_PROTOCOL_DATA_PROVIDER = "0x0B59871DF373136bB7753A7A2675b47ffA0ccC86";
     exports2.ACL_MANAGER = "0x2faBdE81944E97D6dbAAa71BEDAF36229F51bC12";
@@ -54423,9 +54425,9 @@ var require_AaveV3Fuji = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveV2Avalanche.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveV2Avalanche.js
 var require_AaveV2Avalanche = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveV2Avalanche.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveV2Avalanche.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.PROOF_OF_RESERVE_AGGREGATOR = exports2.PROOF_OF_RESERVE = exports2.UI_INCENTIVE_DATA_PROVIDER = exports2.UI_POOL_DATA_PROVIDER = exports2.WALLET_BALANCE_PROVIDER = exports2.MIGRATION_HELPER = exports2.REPAY_WITH_COLLATERAL_ADAPTER = exports2.SWAP_COLLATERAL_ADAPTER = exports2.WETH_GATEWAY = exports2.POOL_ADDRESSES_PROVIDER_REGISTRY = exports2.CHAIN_ID = exports2.EMISSION_MANAGER = exports2.DEFAULT_INCENTIVES_CONTROLLER = exports2.COLLECTOR = exports2.EMERGENCY_ADMIN = exports2.POOL_ADMIN = exports2.AAVE_PROTOCOL_DATA_PROVIDER = exports2.ORACLE = exports2.LENDING_RATE_ORACLE = exports2.POOL_CONFIGURATOR = exports2.POOL = exports2.POOL_ADDRESSES_PROVIDER = void 0;
@@ -54454,9 +54456,9 @@ var require_AaveV2Avalanche = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveV3Avalanche.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveV3Avalanche.js
 var require_AaveV3Avalanche = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveV3Avalanche.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveV3Avalanche.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.STATIC_A_TOKEN_FACTORY = exports2.PROOF_OF_RESERVE_AGGREGATOR = exports2.PROOF_OF_RESERVE = exports2.UI_INCENTIVE_DATA_PROVIDER = exports2.UI_POOL_DATA_PROVIDER = exports2.WALLET_BALANCE_PROVIDER = exports2.LISTING_ENGINE = exports2.SWAP_COLLATERAL_ADAPTER = exports2.REPAY_WITH_COLLATERAL_ADAPTER = exports2.RATES_FACTORY = exports2.WETH_GATEWAY = exports2.POOL_ADDRESSES_PROVIDER_REGISTRY = exports2.EMISSION_MANAGER = exports2.CHAIN_ID = exports2.DEFAULT_STABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_VARIABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_A_TOKEN_IMPL_REV_1 = exports2.DEFAULT_INCENTIVES_CONTROLLER = exports2.COLLECTOR = exports2.ACL_ADMIN = exports2.ACL_MANAGER = exports2.AAVE_PROTOCOL_DATA_PROVIDER = exports2.PRICE_ORACLE_SENTINEL = exports2.ORACLE = exports2.POOL_CONFIGURATOR = exports2.POOL = exports2.POOL_ADDRESSES_PROVIDER = void 0;
@@ -54490,9 +54492,9 @@ var require_AaveV3Avalanche = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveV3Arbitrum.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveV3Arbitrum.js
 var require_AaveV3Arbitrum = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveV3Arbitrum.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveV3Arbitrum.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.STATIC_A_TOKEN_FACTORY = exports2.L2_ENCODER = exports2.UI_INCENTIVE_DATA_PROVIDER = exports2.UI_POOL_DATA_PROVIDER = exports2.WALLET_BALANCE_PROVIDER = exports2.LISTING_ENGINE = exports2.REPAY_WITH_COLLATERAL_ADAPTER = exports2.RATES_FACTORY = exports2.SWAP_COLLATERAL_ADAPTER = exports2.WETH_GATEWAY = exports2.POOL_ADDRESSES_PROVIDER_REGISTRY = exports2.EMISSION_MANAGER = exports2.CHAIN_ID = exports2.DEFAULT_STABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_VARIABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_A_TOKEN_IMPL_REV_1 = exports2.DEFAULT_INCENTIVES_CONTROLLER = exports2.COLLECTOR = exports2.ACL_ADMIN = exports2.ACL_MANAGER = exports2.AAVE_PROTOCOL_DATA_PROVIDER = exports2.PRICE_ORACLE_SENTINEL = exports2.ORACLE = exports2.POOL_CONFIGURATOR = exports2.POOL = exports2.POOL_ADDRESSES_PROVIDER = void 0;
@@ -54525,9 +54527,9 @@ var require_AaveV3Arbitrum = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveV3ArbitrumGoerli.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveV3ArbitrumGoerli.js
 var require_AaveV3ArbitrumGoerli = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveV3ArbitrumGoerli.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveV3ArbitrumGoerli.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.L2_ENCODER = exports2.UI_INCENTIVE_DATA_PROVIDER = exports2.UI_POOL_DATA_PROVIDER = exports2.WALLET_BALANCE_PROVIDER = exports2.FAUCET = exports2.WETH_GATEWAY = exports2.EMISSION_MANAGER = exports2.CHAIN_ID = exports2.DEFAULT_STABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_VARIABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_A_TOKEN_IMPL_REV_1 = exports2.DEFAULT_INCENTIVES_CONTROLLER = exports2.COLLECTOR = exports2.ACL_ADMIN = exports2.ACL_MANAGER = exports2.AAVE_PROTOCOL_DATA_PROVIDER = exports2.PRICE_ORACLE_SENTINEL = exports2.ORACLE = exports2.POOL_CONFIGURATOR = exports2.POOL = exports2.POOL_ADDRESSES_PROVIDER = void 0;
@@ -54555,20 +54557,20 @@ var require_AaveV3ArbitrumGoerli = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveV3FantomTestnet.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveV3FantomTestnet.js
 var require_AaveV3FantomTestnet = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveV3FantomTestnet.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveV3FantomTestnet.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.UI_INCENTIVE_DATA_PROVIDER = exports2.UI_POOL_DATA_PROVIDER = exports2.WALLET_BALANCE_PROVIDER = exports2.FAUCET = exports2.WETH_GATEWAY = exports2.EMISSION_MANAGER = exports2.CHAIN_ID = exports2.DEFAULT_STABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_VARIABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_A_TOKEN_IMPL_REV_1 = exports2.DEFAULT_INCENTIVES_CONTROLLER = exports2.COLLECTOR = exports2.ACL_ADMIN = exports2.ACL_MANAGER = exports2.AAVE_PROTOCOL_DATA_PROVIDER = exports2.PRICE_ORACLE_SENTINEL = exports2.ORACLE = exports2.POOL_CONFIGURATOR = exports2.POOL = exports2.POOL_ADDRESSES_PROVIDER = void 0;
-    exports2.POOL_ADDRESSES_PROVIDER = "0xC809bea009Ca8DAA680f6A1c4Ca020D550210736";
-    exports2.POOL = "0x95b1B6470eAF8cC4A03d2D44C6b54eBB8ede8C30";
-    exports2.POOL_CONFIGURATOR = "0x91ce34267F11EcB54b2601Ed1C43188cE465dabB";
-    exports2.ORACLE = "0xDd6BCF7EF3dbA79b03D61De36Cc292661c664efD"; // TODO: oracle
+    exports2.POOL_ADDRESSES_PROVIDER = "0xB40044504a98e18c811070eDc35dAf4d35e70Ef4"; // "0xC809bea009Ca8DAA680f6A1c4Ca020D550210736";
+    exports2.POOL = "0xa49C3d179e336B55b65aB0486Ae5A6603f940aDF"; // "0x95b1B6470eAF8cC4A03d2D44C6b54eBB8ede8C30";
+    exports2.POOL_CONFIGURATOR = "0xe765433b9FF88Ee280B5c01Cc486412662Eab2F0"; //"0x91ce34267F11EcB54b2601Ed1C43188cE465dabB";
+    exports2.ORACLE = "0x9008A09B61695D8E504d7e0Fd2EEB0D003FfAa74"; // DONE: ORACLE
     exports2.PRICE_ORACLE_SENTINEL = "0x0000000000000000000000000000000000000000";
-    exports2.AAVE_PROTOCOL_DATA_PROVIDER = "0x221b58772526669172acCA8B68f6905086c81569";
-    exports2.ACL_MANAGER = "0xbB27a8D0D19fB0c43364Bd26AEB8Fc131F4dA40F";
-    exports2.ACL_ADMIN = "0xaDdfe0b2342800ebD67C30d1c2Bd479E4D498BD5";
+    exports2.AAVE_PROTOCOL_DATA_PROVIDER = "0x8fAC1ADcBc53db7367b37B1aa8492B2862B1CeBA"; // "0x221b58772526669172acCA8B68f6905086c81569";
+    exports2.ACL_MANAGER = "0x057aB1d83de3A8beD18b5C9D3F6aA5E19Cb84920"; //"0xbB27a8D0D19fB0c43364Bd26AEB8Fc131F4dA40F";
+    exports2.ACL_ADMIN = "0x69F65DC937191A5EF3dED31cc0ba8185D60D375f"; //"0xaDdfe0b2342800ebD67C30d1c2Bd479E4D498BD5";
     exports2.COLLECTOR = "0xE4A880b56B4790632753c7393cC51FefFd965678";
     exports2.DEFAULT_INCENTIVES_CONTROLLER = "0xa45B99c552a2D576B272cc9bFbEB131427ae5148";
     exports2.DEFAULT_A_TOKEN_IMPL_REV_1 = "0xd116069eaBD82DA3A18CA9c5231c1DbB3279Dc0b";
@@ -54584,9 +54586,9 @@ var require_AaveV3FantomTestnet = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveV3Fantom.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveV3Fantom.js
 var require_AaveV3Fantom = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveV3Fantom.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveV3Fantom.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.UI_INCENTIVE_DATA_PROVIDER = exports2.UI_POOL_DATA_PROVIDER = exports2.WALLET_BALANCE_PROVIDER = exports2.REPAY_WITH_COLLATERAL_ADAPTER = exports2.SWAP_COLLATERAL_ADAPTER = exports2.WETH_GATEWAY = exports2.POOL_ADDRESSES_PROVIDER_REGISTRY = exports2.EMISSION_MANAGER = exports2.CHAIN_ID = exports2.DEFAULT_STABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_VARIABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_A_TOKEN_IMPL_REV_1 = exports2.DEFAULT_INCENTIVES_CONTROLLER = exports2.COLLECTOR = exports2.ACL_ADMIN = exports2.ACL_MANAGER = exports2.AAVE_PROTOCOL_DATA_PROVIDER = exports2.PRICE_ORACLE_SENTINEL = exports2.ORACLE = exports2.POOL_CONFIGURATOR = exports2.POOL = exports2.POOL_ADDRESSES_PROVIDER = void 0;
@@ -54615,9 +54617,9 @@ var require_AaveV3Fantom = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveV3Harmony.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveV3Harmony.js
 var require_AaveV3Harmony = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveV3Harmony.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveV3Harmony.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.UI_INCENTIVE_DATA_PROVIDER = exports2.UI_POOL_DATA_PROVIDER = exports2.WALLET_BALANCE_PROVIDER = exports2.WETH_GATEWAY = exports2.POOL_ADDRESSES_PROVIDER_REGISTRY = exports2.EMISSION_MANAGER = exports2.CHAIN_ID = exports2.DEFAULT_STABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_VARIABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_A_TOKEN_IMPL_REV_1 = exports2.DEFAULT_INCENTIVES_CONTROLLER = exports2.COLLECTOR = exports2.ACL_ADMIN = exports2.ACL_MANAGER = exports2.AAVE_PROTOCOL_DATA_PROVIDER = exports2.PRICE_ORACLE_SENTINEL = exports2.ORACLE = exports2.POOL_CONFIGURATOR = exports2.POOL = exports2.POOL_ADDRESSES_PROVIDER = void 0;
@@ -54644,9 +54646,9 @@ var require_AaveV3Harmony = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveV3Optimism.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveV3Optimism.js
 var require_AaveV3Optimism = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveV3Optimism.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveV3Optimism.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.STATIC_A_TOKEN_FACTORY = exports2.L2_ENCODER = exports2.UI_INCENTIVE_DATA_PROVIDER = exports2.UI_POOL_DATA_PROVIDER = exports2.WALLET_BALANCE_PROVIDER = exports2.LISTING_ENGINE = exports2.REPAY_WITH_COLLATERAL_ADAPTER = exports2.RATES_FACTORY = exports2.SWAP_COLLATERAL_ADAPTER = exports2.WETH_GATEWAY = exports2.POOL_ADDRESSES_PROVIDER_REGISTRY = exports2.EMISSION_MANAGER = exports2.CHAIN_ID = exports2.DEFAULT_STABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_VARIABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_A_TOKEN_IMPL_REV_1 = exports2.DEFAULT_INCENTIVES_CONTROLLER = exports2.COLLECTOR = exports2.ACL_ADMIN = exports2.ACL_MANAGER = exports2.AAVE_PROTOCOL_DATA_PROVIDER = exports2.PRICE_ORACLE_SENTINEL = exports2.ORACLE = exports2.POOL_CONFIGURATOR = exports2.POOL = exports2.POOL_ADDRESSES_PROVIDER = void 0;
@@ -54679,9 +54681,9 @@ var require_AaveV3Optimism = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveV3OptimismGoerli.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveV3OptimismGoerli.js
 var require_AaveV3OptimismGoerli = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveV3OptimismGoerli.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveV3OptimismGoerli.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.L2_ENCODER = exports2.UI_INCENTIVE_DATA_PROVIDER = exports2.UI_POOL_DATA_PROVIDER = exports2.WALLET_BALANCE_PROVIDER = exports2.FAUCET = exports2.WETH_GATEWAY = exports2.EMISSION_MANAGER = exports2.CHAIN_ID = exports2.DEFAULT_STABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_VARIABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_A_TOKEN_IMPL_REV_1 = exports2.DEFAULT_INCENTIVES_CONTROLLER = exports2.COLLECTOR = exports2.ACL_ADMIN = exports2.ACL_MANAGER = exports2.AAVE_PROTOCOL_DATA_PROVIDER = exports2.PRICE_ORACLE_SENTINEL = exports2.ORACLE = exports2.POOL_CONFIGURATOR = exports2.POOL = exports2.POOL_ADDRESSES_PROVIDER = void 0;
@@ -54709,9 +54711,9 @@ var require_AaveV3OptimismGoerli = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveV3ScrollAlpha.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveV3ScrollAlpha.js
 var require_AaveV3ScrollAlpha = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveV3ScrollAlpha.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveV3ScrollAlpha.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.L2_ENCODER = exports2.UI_INCENTIVE_DATA_PROVIDER = exports2.UI_POOL_DATA_PROVIDER = exports2.WALLET_BALANCE_PROVIDER = exports2.FAUCET = exports2.WETH_GATEWAY = exports2.EMISSION_MANAGER = exports2.CHAIN_ID = exports2.DEFAULT_STABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_VARIABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_A_TOKEN_IMPL_REV_1 = exports2.DEFAULT_INCENTIVES_CONTROLLER = exports2.COLLECTOR = exports2.ACL_ADMIN = exports2.ACL_MANAGER = exports2.AAVE_PROTOCOL_DATA_PROVIDER = exports2.PRICE_ORACLE_SENTINEL = exports2.ORACLE = exports2.POOL_CONFIGURATOR = exports2.POOL = exports2.POOL_ADDRESSES_PROVIDER = void 0;
@@ -54739,9 +54741,9 @@ var require_AaveV3ScrollAlpha = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveV3Metis.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveV3Metis.js
 var require_AaveV3Metis = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveV3Metis.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveV3Metis.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.LISTING_ENGINE = exports2.RATES_FACTORY = exports2.L2_ENCODER = exports2.UI_INCENTIVE_DATA_PROVIDER = exports2.UI_POOL_DATA_PROVIDER = exports2.WALLET_BALANCE_PROVIDER = exports2.POOL_ADDRESSES_PROVIDER_REGISTRY = exports2.EMISSION_MANAGER = exports2.CHAIN_ID = exports2.DEFAULT_STABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_VARIABLE_DEBT_TOKEN_IMPL_REV_1 = exports2.DEFAULT_A_TOKEN_IMPL_REV_1 = exports2.DEFAULT_INCENTIVES_CONTROLLER = exports2.COLLECTOR = exports2.ACL_ADMIN = exports2.ACL_MANAGER = exports2.AAVE_PROTOCOL_DATA_PROVIDER = exports2.PRICE_ORACLE_SENTINEL = exports2.ORACLE = exports2.POOL_CONFIGURATOR = exports2.POOL = exports2.POOL_ADDRESSES_PROVIDER = void 0;
@@ -54770,9 +54772,9 @@ var require_AaveV3Metis = __commonJS({
   }
 });
 
-// node_modules/@bgd-labs/aave-address-book/dist/AaveAddressBook.js
+// node_modules/@anirudhtx/aave-address-book/dist/AaveAddressBook.js
 var require_AaveAddressBook = __commonJS({
-  "node_modules/@bgd-labs/aave-address-book/dist/AaveAddressBook.js"(exports2) {
+  "node_modules/@anirudhtx/aave-address-book/dist/AaveAddressBook.js"(exports2) {
     "use strict";
     var __createBinding2 = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
       if (k2 === void 0)

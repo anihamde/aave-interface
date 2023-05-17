@@ -1,4 +1,4 @@
-import { AaveGovernanceV2 } from '@bgd-labs/aave-address-book';
+import { AaveGovernanceV2 } from '@anirudhtx/aave-address-book';
 import { LinearProgress, Paper } from '@mui/material';
 import Fuse from 'fuse.js';
 import { GovernancePageProps } from 'pages/governance/index.governance';

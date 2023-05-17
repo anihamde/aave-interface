@@ -1,4 +1,4 @@
-import { AaveGovernanceV2 } from '@bgd-labs/aave-address-book';
+import { AaveGovernanceV2 } from '@anirudhtx/aave-address-book';
 import { ShieldExclamationIcon } from '@heroicons/react/outline';
 import { Trans } from '@lingui/macro';
 import { Box, Typography, useTheme } from '@mui/material';

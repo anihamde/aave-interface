@@ -1,5 +1,5 @@
 import { ChainId } from '@aave/contract-helpers';
-import * as markets from '@bgd-labs/aave-address-book';
+import * as markets from '@anirudhtx/aave-address-book';
 import { ReactNode } from 'react';
 
 // Enable for premissioned market
